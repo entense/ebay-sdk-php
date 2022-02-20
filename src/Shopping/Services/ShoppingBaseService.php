@@ -12,6 +12,12 @@ class ShoppingBaseService extends \DTS\eBaySDK\Services\BaseService
     const HDR_AFFILIATE_USER_ID = 'X-EBAY-API-AFFILIATE-USER-ID';
 
     /**
+     * HTTP header constant. The Authentication Token that is used to validate the caller has permission to access the eBay servers.
+     */
+
+    const HDR_AUTHORIZATION = 'X-EBAY-API-IAF-TOKEN';
+
+    /**
      * HTTP header constant. The API version your application supports.
      */
     const HDR_API_VERSION = 'X-EBAY-API-VERSION';
@@ -117,6 +123,10 @@ class ShoppingBaseService extends \DTS\eBaySDK\Services\BaseService
 
         if ($this->getConfig('trackingPartnerCode')) {
             $headers[self::HDR_TRACKING_PARTNER_CODE] = $this->getConfig('trackingPartnerCode');
+        }
+
+        if ($this->getConfig('authorization')) {
+            $headers[self::HDR_AUTHORIZATION] = $this->getConfig('authorization');
         }
 
         return $headers;
