@@ -74,6 +74,12 @@ class ListingInfo extends \DTS\eBaySDK\Types\BaseType
             'repeatable' => false,
             'attribute' => false,
             'elementName' => 'gift'
+        ],
+        'watchCount' => [
+            'type' => 'string',
+            'repeatable' => false,
+            'attribute' => false,
+            'elementName' => 'watchCount'
         ]
     ];
 
